@@ -1,0 +1,14 @@
+ALTER TABLE socialgroup
+  ADD FIELDWORKER VARCHAR(6) DEFAULT 'FWAD1',
+  ADD processed_by_mirth VARCHAR(1) DEFAULT '0',
+  ADD id INT AUTO_INCREMENT NOT NULL,
+  ADD PRIMARY KEY (id);
+
+ALTER TABLE socialgroup ADD INDEX idx_sgid (SOCIALGPID);
+ALTER TABLE socialgroup ADD INDEX idx_headid (HEADID);
+
+UPDATE socialgroup set HEADID=CONCAT(LEFT(HEADID,3),'00',RIGHT(HEADID,7));
+UPDATE socialgroup set SOCIALGPID=CONCAT(LEFT(SOCIALGPID,3),'00',RIGHT(SOCIALGPID,6));
+
+
+select id, str_to_date(DE_DATE,'%Y-%m-%d') DE_DATE , SOCIALGPID , FIELDWORKER , NAME, TYPE , HEADID  FROM socialgroup WHERE processed_by_mirth=0;
