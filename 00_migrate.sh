@@ -3,9 +3,6 @@ set -e
 chmod u+x 02_a_dbf_mysql.R
 chmod u+x 02_b_alter_fields.py
 
-#run R script first, then dump, then
-#sed -i.bak "s/text,/varchar(99),/g" dubai.sql
-#or find a saver way to do this directly in the db
 echo "01"
 mysql -pdata < 01_create_hrs_mysql_db.sql
 echo "02a"
