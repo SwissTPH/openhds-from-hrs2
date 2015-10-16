@@ -11,7 +11,15 @@ __Warning__: this should be run on a test system, all data in the openhds databa
 
 ###Preqequisites:
 
-We assume a complete OpenHDS server installation, including Mirth channels (in particular MigrationChannel and Database Error Writer), and a mysql database called odk_prod (only for the database table to write errors to). The tutorial makes a number of assumptions about URLs, user credentials, and datbase naming conventions. The simplest and recommended approach for following this tutorial is to launch the OpenHDS evaluation platform (link to follow shortly). 
+We assume a complete OpenHDS server installation, including Mirth channels (in particular MigrationChannel and Database Error Writer), and a mysql database called odk_prod (only for the database table to write errors to). The tutorial makes a number of assumptions about URLs, user credentials, and datbase naming conventions. The simplest and recommended approach for following this tutorial is to launch the OpenHDS evaluation platform (link to follow shortly).
+
+Further we need the R language interpreter with the mysql library, and the Python language interpreter with mysql support. On an Ubuntu system you can install these prerequisites like this:
+
+$sudo apt-get install r-cran-rmysql
+
+and (if you are not using virtualenv):
+
+$sudo apt-get install python-mysqldb
 
 ###Tutorial:
 
