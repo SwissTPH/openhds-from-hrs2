@@ -40,7 +40,5 @@ echo "16"
 mysql -pdata hrs_mysql_db < 16_alter_inmigration.sql
 echo "17"
 mysql -pdata odk_prod < 17_create_error_table.sql
-echo "18"
-mysql -pdata openhds < 18_prepare_openhds_db.sql
 
 

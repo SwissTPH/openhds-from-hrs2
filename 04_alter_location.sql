@@ -9,10 +9,16 @@ ALTER TABLE  location
   ADD latitude CHAR(1) default '0' ,
   ADD longitude CHAR(1) default '0' ,
   ADD accuracy CHAR(1) default '0' ,
-  ADD subvillageId VARCHAR(3);
+  ADD subvillageId VARCHAR(3) ,
+  ADD OLD_LOCATIONID VARCHAR(20);
 
 ALTER TABLE location
   ADD UNIQUE INDEX idx_locid (LOCATIONID);
+
+ALTER TABLE location
+  ADD UNIQUE INDEX idx_olocid (OLD_LOCATIONID);
+
+UPDATE location set OLD_LOCATIONID=LOCATIONID;
 
 UPDATE location set LOCATIONID=CONCAT(LEFT(LOCATIONID,3),'00',RIGHT(LOCATIONID,4));
 

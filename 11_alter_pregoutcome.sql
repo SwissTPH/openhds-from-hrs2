@@ -9,10 +9,10 @@ ALTER TABLE pregoutcome ADD INDEX idx_provis (OBSERVEID);
 
 UPDATE pregoutcome set FATHERID='UNK' where FATHERID='Q';
 
-UPDATE pregoutcome set INDIVIDID =CONCAT(LEFT(INDIVIDID,3),'00',RIGHT(INDIVIDID,7));
-UPDATE pregoutcome set FATHERID =CONCAT(LEFT(FATHERID,3),'00',RIGHT(FATHERID,7)) where LENGTH(FATHERID)>6;
+UPDATE pregoutcome p, individual i set p.INDIVIDID=i.INDIVIDID where p.INDIVIDID=i.OLD_INDIVIDID;
+UPDATE pregoutcome p, individual f set p.FATHERID=f.INDIVIDID where p.FATHERID=f.OLD_INDIVIDID;
 
-UPDATE pregoutcome set OBSERVEID=CONCAT(LEFT(OBSERVEID,3),'000',RIGHT(OBSERVEID,6));
+UPDATE pregoutcome p, observation o set p.OBSERVEID=o.OBSERVEID where p.OBSERVEID=o.OLD_OBSERVEID;
 
 SELECT id, OBSERVEID, INDIVIDID, 1 PARTIAL_DATE,FIELDWORKER,str_to_date(DATE,'%Y-%m-%d') DATE, FATHERID FROM pregoutcome WHERE processed_by_mirth =0;
 

@@ -12,7 +12,7 @@ update death set PLACE='UNK' where PLACE is null;
 update death set REASON='UNK' where REASON is null;
 
 
-UPDATE death set INDIVIDID =CONCAT(LEFT(INDIVIDID,3),'00',RIGHT(INDIVIDID,7));
-UPDATE death set OBSERVEID=CONCAT(LEFT(OBSERVEID,3),'000',RIGHT(OBSERVEID,6));
+UPDATE death d, individual i set d.INDIVIDID=i.INDIVIDID where d.INDIVIDID=i.OLD_INDIVIDID;
+UPDATE death d, observation o set d.OBSERVEID=o.OBSERVEID where d.OBSERVEID=o.OLD_OBSERVEID;
 
 SELECT id, OBSERVEID, REASON, FIELDWORKER, str_to_date(DATE,'%Y-%m-%d') DATE, PLACE, INDIVIDID FROM death where processed_by_mirth =0;
