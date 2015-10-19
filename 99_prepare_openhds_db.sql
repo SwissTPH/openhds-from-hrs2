@@ -1,3 +1,5 @@
+SELECT "CAUTION: this will delete your data in the openhds database. Remove line two in 99_prepare_openhds_db.sql if you want to proceed.";
+Remove this line to run the script;
 SET FOREIGN_KEY_CHECKS=0;
 TRUNCATE TABLE AsyncTask;
 TRUNCATE TABLE adultvpm;
