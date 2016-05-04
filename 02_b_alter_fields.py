@@ -2,7 +2,7 @@
 import MySQLdb
 
 
-host = 'localhost'
+host = '127.0.0.1'
 user = 'data'
 pw = 'data'
 print("Connecting to mysql with following paramters:")

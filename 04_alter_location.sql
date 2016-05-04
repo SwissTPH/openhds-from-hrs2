@@ -9,7 +9,7 @@ ALTER TABLE  location
   ADD latitude CHAR(1) default '0' ,
   ADD longitude CHAR(1) default '0' ,
   ADD accuracy CHAR(1) default '0' ,
-  ADD subvillageId VARCHAR(3) ,
+  ADD lowestLocationId VARCHAR(3) ,
   ADD OLD_LOCATIONID VARCHAR(20);
 
 ALTER TABLE location
