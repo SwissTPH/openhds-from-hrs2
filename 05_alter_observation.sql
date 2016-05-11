@@ -15,4 +15,4 @@ UPDATE observation o, location l set o.LOCATIONID=l.LOCATIONID WHERE o.LOCATIONI
 UPDATE observation set OLD_OBSERVEID=OBSERVEID;
 UPDATE observation set OBSERVEID=CONCAT(LEFT(OBSERVEID,3),'000',RIGHT(OBSERVEID,6));
 
-SELECT id, str_to_date(DATE,'%Y-%m-%d') DATE, OBSERVEID, LOCATIONID, FIELDWORKER, ROUND FROM observation WHERE processed_by_mirth=0;
+SELECT id, str_to_date(DATE,'%Y-%m-%d') DATE, OBSERVEID, LOCATIONID, FIELDWORKER, ROUND FROM observation WHERE processed_by_mirth=0 LIMIT 1;
