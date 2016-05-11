@@ -39,6 +39,7 @@ TRUNCATE TABLE whitelist;
 
 INSERT INTO `fieldworker` (`uuid`, `deleted`, `insertDate`, `voidDate`, `voidReason`, `extId`, `firstName`, `lastName`, `passwordHash`, `insertBy_uuid`, `voidBy_uuid`) VALUES
 ('ff808181547ae7c701547b78c1150012', 0, '2016-05-04', NULL, NULL, 'FWAD1', 'Admin', 'Data', '$2a$08$m/k/u4739d6wplA3hBpRE..lu7eTzl9nyAsXDKIQUW6NaWaUyxE5m', 'ff8081815462747d01546276bc260000', NULL);
+INSERT INTO `fieldworker` VALUES ('UnknownFieldWorker',0,NULL,NULL,NULL,'UNK','Unknown','FieldWorker','invalid-password-hash',NULL,NULL);
 
 INSERT INTO `individual` VALUES ('Unknown Individual',0,'2009-12-19',NULL,NULL,'PENDING',NULL,'1900-12-19',NULL,'UNK','Unknown','MALE','UNKNOWN',NULL,NULL,'User 1',NULL,'UnknownFieldWorker',NULL,NULL);
 INSERT INTO `locationhierarchy` VALUES ('hierarchy1','SUI','Switzerland','hierarchyLevelId1','hierarchy_root'),('hierarchy2','NWS','NW','hierarchyLevelId2','hierarchy1'),('hierarchy3','BSL','Basel','hierarchyLevelId3','hierarchy2'),('hierarchy4','BSS','Basel-Stadt','hierarchyLevelId4','hierarchy3'),('hierarchy5_1','ISE','Iselin','hierarchyLevelId5','hierarchy4'),('hierarchy5_2','GTH','Gotthelf','hierarchyLevelId5','hierarchy4'),('hierarchy5_3','BCL','Bachletten','hierarchyLevelId5','hierarchy4'),('hierarchy5_4','GND','Gundeldingen','hierarchyLevelId5','hierarchy4'),('hierarchy_root','HIERARCHY_ROOT','',NULL,NULL);
