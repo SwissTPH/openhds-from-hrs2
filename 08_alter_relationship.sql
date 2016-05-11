@@ -15,4 +15,4 @@ UPDATE relationship set EEVENTTYPE ='DTH' WHERE EEVENTTYPE ='WID';
 UPDATE relationship r, individual i set r.INDIVIDID=i.INDIVIDID where r.INDIVIDID=i.OLD_INDIVIDID;
 UPDATE relationship r, individual i set r.INDIVIDID2=i.INDIVIDID where r.INDIVIDID2=i.OLD_INDIVIDID;
 
-SELECT id, str_to_date(DE_DATE,'%Y-%m-%d') DE_DATE, str_to_date(SDATE,'%Y-%m-%d') SDATE, INDIVIDID2, FIELDWORKER, INDIVIDID, TYPE FROM relationship WHERE processed_by_mirth =0;
+SELECT id, str_to_date(DE_DATE,'%Y-%m-%d') DE_DATE, str_to_date(SDATE,'%Y-%m-%d') SDATE, INDIVIDID2, FIELDWORKER, INDIVIDID, TYPE FROM relationship WHERE processed_by_mirth =0 LIMIT 1;

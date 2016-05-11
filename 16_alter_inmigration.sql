@@ -15,10 +15,8 @@ update inmigration set REASON='OTHER' where REASON='6';
 UPDATE inmigration m, individual i set m.INDIVIDID=i.INDIVIDID where m.INDIVIDID=i.OLD_INDIVIDID;
 UPDATE inmigration m, observation o set m.OBSERVEID=o.OBSERVEID where m.OBSERVEID=o.OLD_OBSERVEID;
 
-
-
 SELECT id, REASON, str_to_date(DATE,'%Y-%m-%d') DATE, INDIVIDID, REGION_NAM MOVED_FROM , OBSERVEID, INTERNAL, LOCATIONID, FIELDWORKER 
-FROM inmigration where processed_by_mirth=0;
+FROM inmigration where processed_by_mirth=0 LIMIT 1;
 
 
 

@@ -14,6 +14,6 @@ UPDATE pregoutcome p, individual f set p.FATHERID=f.INDIVIDID where p.FATHERID=f
 
 UPDATE pregoutcome p, observation o set p.OBSERVEID=o.OBSERVEID where p.OBSERVEID=o.OLD_OBSERVEID;
 
-SELECT id, OBSERVEID, INDIVIDID, 1 PARTIAL_DATE,FIELDWORKER,str_to_date(DATE,'%Y-%m-%d') DATE, FATHERID FROM pregoutcome WHERE processed_by_mirth =0;
+SELECT id, OBSERVEID, INDIVIDID, 1 PARTIAL_DATE,FIELDWORKER,str_to_date(DATE,'%Y-%m-%d') DATE, FATHERID FROM pregoutcome WHERE processed_by_mirth =0 LIMIT 1;
 
 

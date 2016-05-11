@@ -39,5 +39,4 @@ UPDATE individual c, individual m set c.MOTHERID=m.INDIVIDID where c.MOTHERID=m.
 UPDATE individual c, individual f set c.FATHERID=f.INDIVIDID where c.FATHERID=f.OLD_INDIVIDID;
 
 
-SELECT id, str_to_date(BIRTH_DATE,'%Y-%m-%d') BIRTH_DATE, FIRSTNAME,MIDDLENAME, MOTHERID, INDIVIDID,  GENDER, FIELDWORKER, LASTNAME, approximate, FATHERID 
-FROM individual WHERE processed_by_mirth=0 order by BIRTH_DATE ASC;
+SELECT id, str_to_date(BIRTH_DATE,'%Y-%m-%d') BIRTH_DATE, FIRSTNAME,MIDDLENAME, MOTHERID, INDIVIDID,  GENDER, FIELDWORKER, LASTNAME, approximate, FATHERID FROM individual WHERE processed_by_mirth=0 LIMIT 1;

@@ -14,5 +14,4 @@ UPDATE socialgroup s, individual i set s.HEADID=i.INDIVIDID where s.HEADID=i.OLD
 UPDATE socialgroup set OLD_SOCIALGPID=SOCIALGPID;
 UPDATE socialgroup set SOCIALGPID=CONCAT(LEFT(SOCIALGPID,3),'00',RIGHT(SOCIALGPID,6));
 
-
-select id, str_to_date(DE_DATE,'%Y-%m-%d') DE_DATE , SOCIALGPID , FIELDWORKER , NAME, TYPE , HEADID  FROM socialgroup WHERE processed_by_mirth=0;
+select id, str_to_date(DE_DATE,'%Y-%m-%d') DE_DATE , SOCIALGPID , FIELDWORKER , NAME, TYPE , HEADID  FROM socialgroup WHERE processed_by_mirth=0 LIMIT 1;

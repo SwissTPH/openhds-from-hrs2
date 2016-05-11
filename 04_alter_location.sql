@@ -25,4 +25,4 @@ UPDATE location set LOCATIONID=CONCAT(LEFT(LOCATIONID,3),'00',RIGHT(LOCATIONID,4
 #TODO: here you need to assign the lowestLocationId to all your locations, e.g.:
 #update location set lowestLocationId='ISE' WHERE OLD_LOCATIONID like "123%";
 
-SELECT id, lowestLocationId , LOCATIONID, FIELDWORKER, 'RUR' LOCATION_TYPE, ACCURACY, ALTITUDE, LONGITUDE, LATITUDE FROM location WHERE processed_by_mirth =0;
+SELECT id, lowestLocationId , LOCATIONID, FIELDWORKER, 'RUR' LOCATION_TYPE, ACCURACY, ALTITUDE, LONGITUDE, LATITUDE FROM location WHERE processed_by_mirth =0 LIMIT 1;

@@ -16,4 +16,4 @@ UPDATE residency set EEVENTTYPE='OMG' where EEVENTTYPE ='EXT';
 UPDATE residency set SEVENTTYPE='IMG' where SEVENTTYPE ='ENT';
 
 SELECT id, str_to_date(DE_DATE,'%Y-%m-%d') DE_DATE, str_to_date(SDATE,'%Y-%m-%d') SDATE, FIELDWORKER, LOCATIONID,
-INDIVIDID,SEVENTTYPE,EEVENTTYPE,str_to_date(EDATE,'%Y-%m-%d') EDATE FROM residency WHERE processed_by_mirth =0 order by SDATE asc;
+INDIVIDID,SEVENTTYPE,EEVENTTYPE,str_to_date(EDATE,'%Y-%m-%d') EDATE FROM residency WHERE processed_by_mirth =0 order by SDATE asc LIMIT 1;

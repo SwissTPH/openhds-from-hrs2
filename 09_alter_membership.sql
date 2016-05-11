@@ -29,4 +29,4 @@ UPDATE membership m, individual i set m.INDIVIDID=i.INDIVIDID where m.INDIVIDID=
 
 
 SELECT id, str_to_date(DE_DATE,'%Y-%m-%d') DE_DATE, str_to_date(SDATE,'%Y-%m-%d') SDATE, FIELDWORKER, SOCIALGPID, RLTN_HEAD, INDIVIDID,SEVENTTYPE,EEVENTTYPE,str_to_date(EDATE,'%Y-%m-%d') EDATE 
-FROM membership WHERE processed_by_mirth =0 order by SDATE asc;
+FROM membership WHERE processed_by_mirth =0  LIMIT 1;

@@ -13,7 +13,5 @@ UPDATE outmigration m, observation o set m.OBSERVEID=o.OBSERVEID where m.OBSERVE
 ALTER TABLE outmigration CHANGE OUTMGREASO REASON VARCHAR(99);
 
 
-SELECT id, OBSERVEID, REGION_NAM, FIELDWORKER, str_to_date(DATE,'%Y-%m-%d') DATE, REASON, INDIVIDID FROM outmigration WHERE processed_by_mirth =0;
-
-
+SELECT id, OBSERVEID, REGION_NAM, FIELDWORKER, str_to_date(DATE,'%Y-%m-%d') DATE, REASON, INDIVIDID FROM outmigration WHERE processed_by_mirth =0 LIMIT 1;
 
