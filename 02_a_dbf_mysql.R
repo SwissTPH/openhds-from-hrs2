@@ -2,7 +2,7 @@
 library(foreign)
 
 library(RMySQL)
-mydb = dbConnect(MySQL(), user='data', password='data', dbname='hrs_mysql_db', host='localhost')
+mydb = dbConnect(MySQL(), user='data', password='data', dbname='hrs_mysql_db', host='127.0.0.1')
 
 tables<-c("birth", "death", "individual", "indvstatus", "inmigration", "location", "membership", "observation", "outmigration", "pregoutcome", "relationship", "residency", "round", "socialgroup")
 
