@@ -1,6 +1,6 @@
 use openhds;
 SELECT "CAUTION: this will truncate all tables in your openhds database, and update data in your hrs_mysql_db. If you really want to delete your data, remove line two in 99_prepare_demo_data.sql to proceed.";
-#Remove this line to run the script;
+Remove this line to run the script;
 SET FOREIGN_KEY_CHECKS=0;
 TRUNCATE TABLE AsyncTask;
 TRUNCATE TABLE adultvpm;
