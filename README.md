@@ -23,4 +23,4 @@ $sudo apt-get install python-mysqldb
 
 ###Tutorial:
 
-Follow the steps described in [OpenHDS manual](https://github.com/SwissTPH/openhds/blob/master/doc/OpenHDS_Manual.pdf?raw=true) to migrated a small common-denomitaor HRS2 database to OpenHDS. Script 00_migrate.sh calls all the script corresponding to the transformation in correct order. This may be used to build a migration workflow adapted to your local version of HRS2.
+Follow the steps described in [OpenHDS manual](https://github.com/SwissTPH/openhds/blob/master/doc/OpenHDS_Manual.pdf?raw=true) to migrated a small common-denomitaor HRS2 database to OpenHDS. Script 00_migrate.sh calls all the script corresponding to the transformation in correct order. Script 99_prepare_demo_data.sql has to be run manually after commenting out or deleting the line at the beginning which makes it crash (this is added to safeguard against accidentially deleting and openhds database). After running the script, the MirthConnect migration channel can be started. This may be used to build a migration workflow adapted to your local version of HRS2.
